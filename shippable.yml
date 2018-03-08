@@ -112,7 +112,7 @@ jobs:
       - TASK:
         - script: echo 'HI'
 
-  - name: runSh-Job-1
+  - name: runSh-Job-Out
     type: runSh
     steps:
       - OUT: jatin-params
