@@ -112,3 +112,20 @@ jobs:
       - TASK:
         - script: echo 'HI'
 
+  - name: runSh-Job-1
+    type: runSh
+    steps:
+      - OUT: jatin-params
+      - OUT: jatin-gitRepo
+      - OUT: oldaws
+      - OUT: jatin-cluster
+      - OUT: jatin-dockerOpts
+      - OUT: jatin-jfrog
+      - OUT: jatin-image
+      - OUT: jatin-integration
+      - OUT: jatin-slack
+      - OUT: jatin-replicas
+      - OUT: jatin-state
+      - OUT: jatin-version
+      - TASK:
+        - script: echo 'HI'
