@@ -18,7 +18,7 @@ resources:
   
   - name: jatin-gitRepo
     type: gitRepo
-    integration: github
+    integration: jatin-github
     pointer:
       sourceName: jatindogra/sample_azure
       branch: master
