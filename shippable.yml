@@ -1,36 +1,52 @@
 language: 
   - node_js
 
-architecture: x86_64		
-os: Ubuntu_14.04
 # Version number
 node_js: 
-  #- ver:
-      #- 0.122
-  #- 0.12
-  #- null
-  
-  #- null
-  #- 0.12
-  - 4.2.1 
-#  - iojs-v1Z      
- # - iojs-v2   
-  #- iojs-v3 
-  
-#env:
-  #- BUILD_TAG=latest
-  #- BUILD_TAG=prod
-  
+  - 4.2.1
+
 build:
   pre_ci:
     - echo "this is pr-ci"
-  #pre_ci_boot:     
-    #image_name: drydock/u12nod 
-    #image_tag: $BUILD_TAG
-    #pull: true
   ci: 
     - node --version
     - echo "done"
-    #- sleep 9m
     
- 
+resources:
+  - name: jatin-params-master
+    type: params
+    version:
+      params:
+        boo: foo
+  
+  - name: jatin-gitRepo-master
+    type: gitRepo
+    integration: jatin-github
+    pointer:
+      sourceName: jatindogra/sample_azure
+      branch: master
+
+  - name: jatin-dockerOpts-master
+    type: dockerOptions
+    version:
+      labels:
+        foo: bar
+        
+  - name: jatin-state-master
+    type: state
+
+  - name: jatin-trigger-master
+    type: trigger
+    version:
+      counter: 1
+
+jobs:
+  - name: sample-repo_runCI
+    type: runCI
+    steps:
+      - IN: jatin-params-master
+      - IN: jatin-gitRepo-master
+      - IN: jatin-dockerOpts-master
+      - IN: jatin-state-master
+      - OUT: jatin-state-master
+      - OUT: jatin-trigger-master
