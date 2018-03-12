@@ -95,6 +95,7 @@ resources:
 jobs:
   - name: runSh-Job
     type: runSh
+    allowPublicAccess: true
     steps:
       - IN: jatin-params
       - IN: jatin-gitRepo
@@ -114,6 +115,7 @@ jobs:
 
   - name: runSh-Job-Out
     type: runSh
+    allowPublicAccess: true
     steps:
       - OUT: jatin-params
       - OUT: jatin-gitRepo
