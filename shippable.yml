@@ -13,35 +13,6 @@ build:
     - echo "done"
     
 resources:
-  - name: jatin-params-master
-    type: params
-    version:
-      params:
-        boo: foo
-  
-  - name: jatin-gitRepo-master
-    type: gitRepo
-    integration: jatin-github
-    pointer:
-      sourceName: jatindogra/sample_azure
-      branch: master
-
-  - name: jatin-dockerOpts-master
-    type: dockerOptions
-    version:
-      labels:
-        foo: bar
-        
   - name: sample-externalCIServer
     type: externalCIServer
 
-jobs:
-  - name: sample-repo_runCI
-    type: runCI
-    steps:
-      - IN: jatin-params-master
-      - IN: jatin-gitRepo-master
-      - IN: jatin-dockerOpts-master
-      - IN: jatin-state-master
-      - OUT: jatin-state-master
-      - OUT: jatin-trigger-master
