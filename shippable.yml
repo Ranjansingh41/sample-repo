@@ -32,13 +32,8 @@ resources:
       labels:
         foo: bar
         
-  - name: jatin-state-master
-    type: state
-
-  - name: jatin-trigger-master
-    type: trigger
-    version:
-      counter: 1
+  - name: sample-externalCIServer
+    type: externalCIServer
 
 jobs:
   - name: sample-repo_runCI
@@ -50,6 +45,3 @@ jobs:
       - IN: jatin-state-master
       - OUT: jatin-state-master
       - OUT: jatin-trigger-master
-
-  - name: sample-externalCI
-    type: externalCI
