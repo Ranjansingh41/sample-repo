@@ -50,3 +50,6 @@ jobs:
       - IN: jatin-state-master
       - OUT: jatin-state-master
       - OUT: jatin-trigger-master
+
+  - name: sample-externalCI
+    type: externalCI
