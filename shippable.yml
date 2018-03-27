@@ -15,8 +15,6 @@ build:
 jobs:
   - name: runSh-Job
     type: runSh
-    runtime:
-      nodePool: windows-dynamic
     steps:
       - TASK:
         - script: echo "done"
