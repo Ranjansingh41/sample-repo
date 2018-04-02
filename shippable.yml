@@ -13,7 +13,7 @@ build:
 integrations:
   notifications:
     - integrationName: jatin-webhook
-      type: generic
+      type: webhookV2
       payload:
         - title=ShippableBuild - $REPO_FULL_NAME - $BUILD_NUMBER
         - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMMIT_MESSAGE
