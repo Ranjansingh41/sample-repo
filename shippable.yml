@@ -9,3 +9,14 @@ build:
   ci: 
     - node --version
     - echo "done success"
+
+integrations:
+  notifications:
+    - integrationName: jatin-webhook
+      type: webhook
+      payload:
+        - title=ShippableBuild - $REPO_FULL_NAME - $BUILD_NUMBER
+        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMMIT_MESSAGE
+      on_success: never
+      on_failure: always
+      on_cancel: never
