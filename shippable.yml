@@ -8,5 +8,4 @@ node_js:
 build:
   ci: 
     - node --version
-    - echo "done"
-
+    - echo "done success"
