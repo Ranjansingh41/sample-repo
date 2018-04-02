@@ -6,13 +6,7 @@ node_js:
   - 4.2.1
 
 build:
-  pre_ci:
-    - echo "this is pr-ci"
   ci: 
     - node --version
     - echo "done"
-    
-resources:
-  - name: sample-externalCIServer
-    type: externalCIServer
 
