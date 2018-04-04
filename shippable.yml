@@ -19,3 +19,4 @@ integrations:
         - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMMIT_MESSAGE
       on_success: always
       on_failure: always
+
