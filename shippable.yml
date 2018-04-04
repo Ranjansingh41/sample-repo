@@ -16,6 +16,6 @@ integrations:
       type: webhook
       payload:
         - repo_name=$REPO_FULL_NAME
-        #- commit_message=$COMMIT_MESSAGE
+        - commit_message=$COMMIT_MESSAGE
       on_success: always
       on_failure: always
