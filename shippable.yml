@@ -20,9 +20,3 @@ integrations:
       on_success: always
       on_failure: always
       on_cancel: never
-      
-    - integrationName: jatin-slack
-      type: slack
-      versionTemplate:
-        recipients:
-          - "#beta1"
