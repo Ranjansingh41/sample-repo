@@ -15,8 +15,8 @@ integrations:
     - integrationName: jatin-webhook
       type: webhook
       payload:
-        - title=ShippableBuild - $REPO_FULL_NAME - $BUILD_NUMBER
-        #- body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMMIT_MESSAGE
+        - repo_name=$REPO_FULL_NAME
+        - commit_message=$COMMIT_MESSAGE
       on_success: always
       on_failure: always
 
