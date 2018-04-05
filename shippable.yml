@@ -25,7 +25,12 @@ resources:
     versionTemplate:
       region: "us-central1-a"
       sourceName: jatin-cluster
-
+      
+  - name: jatin-version
+    type: version
+    versionTemplate:
+      versionName: "0.0.1"
+      
 jobs:
   - name: jatin-manifest
     type: manifest
@@ -44,16 +49,22 @@ jobs:
       - IN: jatin-deploy-1
         force: true
 
-  
-  - name: jatin-deploy-2
-    type: deploy
-    steps:
-      - IN: jatin-manifest-2
-      - IN: jatin-kube
-  
   - name: jatin-deploy-1
     type: deploy
     steps:
       - IN: jatin-manifest
+        force: true
+      - IN: jatin-kube
+  
+  - name: jatin-release
+    type: release
+    steps:
+      - IN: jatin-version
+      - IN: jatin-manifest-2
+  
+  - name: jatin-deploy-2
+    type: deploy
+    steps:
+      - IN: jatin-release
         force: true
       - IN: jatin-kube
