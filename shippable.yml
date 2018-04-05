@@ -8,14 +8,33 @@ node_js:
 build:
   ci: 
     - printenv
-    - echo $foo
-    - echo $JATINPARAMSOUT_PARAMS_FOO
-    - echo $JATINPARAMSIN_PARAMS_FOO
+
+resources:
+  - name: jatin-img
+    type: image
+    integration: jatin-docker
+    pointer:
+      sourceName: "scriptnull/debian"
+      isPull: false
+    seed:
+      versionName: "driftking"
+  
+  - name: jatin-cluster
+    type: cluster
+    integration: jatin-cluster
+    versionTemplate:
+      region: "us-east-1"
+      sourceName: jatin-cluster
 
 jobs:
-  - name: runSh-Job
-    type: runSh
-    allowPublicAccess: true
+  - name: jatin-manifest
+    type: manifest
     steps:
-      - TASK:
-        - script: echo "done"
+      - IN: jatin-image
+        force: true
+  
+  - name: jatin-deploy
+    type: deploy
+    steps:
+      - IN: jatin-manifest
+      - IN: jatin-cluster
