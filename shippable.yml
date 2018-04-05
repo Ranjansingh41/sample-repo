@@ -43,9 +43,16 @@ jobs:
       - IN: jatin-manifest
         force: true
       - IN: jatin-kube
+      - IN: jatin-deploy-1
   
   - name: jatin-deploy-2
     type: deploy
     steps:
       - IN: jatin-manifest-2
+      - IN: jatin-kube
+  
+  - name: jatin-deploy-1
+    type: deploy
+    steps:
+      - IN: jatin-manifest
       - IN: jatin-kube
