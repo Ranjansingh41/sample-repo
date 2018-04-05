@@ -19,7 +19,7 @@ resources:
     seed:
       versionName: "driftking"
   
-  - name: jatin-cluster
+  - name: jatin-kube
     type: cluster
     integration: jatin-kube
     versionTemplate:
