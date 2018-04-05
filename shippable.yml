@@ -42,10 +42,10 @@ jobs:
     steps:
       - IN: jatin-manifest
         force: true
-      - IN: jatin-cluster
+      - IN: jatin-kube
   
   - name: jatin-deploy-2
     type: deploy
     steps:
       - IN: jatin-manifest-2
-      - IN: jatin-cluster
+      - IN: jatin-kube
