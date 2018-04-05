@@ -42,7 +42,6 @@ jobs:
     steps:
       - IN: jatin-manifest
         force: true
-      - IN: jatin-manifest-2
       - IN: jatin-cluster
   
   - name: jatin-deploy-2
