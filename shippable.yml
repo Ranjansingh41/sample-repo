@@ -21,7 +21,7 @@ resources:
   
   - name: jatin-cluster
     type: cluster
-    integration: jatin-cluster
+    integration: jatin-kube
     versionTemplate:
       region: "us-central1-a"
       sourceName: jatin-cluster
