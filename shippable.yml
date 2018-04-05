@@ -32,9 +32,15 @@ jobs:
     steps:
       - IN: jatin-img
   
+  - name: jatin-manifest-2
+    type: manifest
+    steps:
+      - IN: jatin-img
+ 
   - name: jatin-deploy
     type: deploy
     steps:
       - IN: jatin-manifest
         force: true
+      - IN: jatin-manifest-2
       - IN: jatin-cluster
