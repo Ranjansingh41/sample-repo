@@ -31,10 +31,10 @@ jobs:
     type: manifest
     steps:
       - IN: jatin-img
-        force: true
   
   - name: jatin-deploy
     type: deploy
     steps:
       - IN: jatin-manifest
+        force: true
       - IN: jatin-cluster
