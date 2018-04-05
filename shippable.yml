@@ -23,7 +23,7 @@ resources:
     type: cluster
     integration: jatin-cluster
     versionTemplate:
-      region: "us-east-1"
+      region: "us-central1-a"
       sourceName: jatin-cluster
 
 jobs:
