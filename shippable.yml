@@ -40,10 +40,9 @@ jobs:
   - name: jatin-deploy
     type: deploy
     steps:
-      - IN: jatin-manifest
-        force: true
       - IN: jatin-kube
       - IN: jatin-deploy-1
+        force: true
 
   
   - name: jatin-deploy-2
@@ -56,4 +55,5 @@ jobs:
     type: deploy
     steps:
       - IN: jatin-manifest
+        force: true
       - IN: jatin-kube
