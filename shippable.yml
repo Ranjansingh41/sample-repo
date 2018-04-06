@@ -53,7 +53,7 @@ jobs:
     type: deploy
     steps:
       - IN: jatin-manifest
-        force: true
+        #force: true
       - IN: jatin-kube
   
   - name: jatin-release
@@ -66,5 +66,5 @@ jobs:
     type: deploy
     steps:
       - IN: jatin-release
-        force: true
+        #force: true
       - IN: jatin-kube
