@@ -47,7 +47,7 @@ jobs:
     steps:
       - IN: jatin-kube
       - IN: jatin-deploy-1
-        force: true
+        #force: true
 
   - name: jatin-deploy-1
     type: deploy
